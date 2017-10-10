@@ -121,3 +121,8 @@ alias emacs="NO_AT_BRIDGE=1 LIBGL_ALWAYS_INDIRECT=1 emacs"
 if [ -f ~/.alias ]; then
 	. ~/.alias
 fi
+export PS1="\u@\w$ "
+
+## for rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

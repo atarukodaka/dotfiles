@@ -163,6 +163,7 @@
 (set-default-coding-systems 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
 (global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
+(global-set-key (kbd "M-<zenkaku-hankaku>") 'toggle-input-method)
 
 ;; mozc
 ;(require 'mozc)
