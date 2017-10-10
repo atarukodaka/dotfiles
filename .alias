@@ -1,0 +1,7 @@
+[user]
+	name = Ataru KODAKA
+	email = ataru.kodaka@gmail.com
+[alias]
+	co = checkout
+	cm = commit
+	st = status
