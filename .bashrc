@@ -115,14 +115,33 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+################################################################
+
 export DISPLAY=DESKTOP-ST40GN0:0.0
 export PATH=$PATH:$HOME/bin
-alias emacs="NO_AT_BRIDGE=1 LIBGL_ALWAYS_INDIRECT=1 emacs"
+export PS1="\u@\w$ "
+
+## alias
 if [ -f ~/.alias ]; then
 	. ~/.alias
 fi
-export PS1="\u@\w$ "
 
-## for rbenv
+## emacs
+export NO_AT_BRIDGE=1
+export LIBGL_ALWAYS_INDIRECT=1 
+#alias emacs="NO_AT_BRIDGE=1 LIBGL_ALWAYS_INDIRECT=1 emacs"
+
+## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+## ssh
+if [ -f ~/.ssh-agent ]; then
+    . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+    ssh-agent > ~/.ssh-agent
+    . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
+

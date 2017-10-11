@@ -136,16 +136,16 @@
 		    '(background-color . "LemonChiffon")
 		    '(background-color . "gray")
 		    '(border-color . "black")
-		    '(mouse-color . "white")
+		    '(mouse-color . "black")
 		    '(cursor-color . "black")
 ;;		    '(ime-font . (w32-logfont "ＭＳ ゴシック"
 ;;					      0 16 400 0 nil nil nil
 ;;					      128 1 3 49)) ; TrueType のみ
 ;;		    '(font . "bdf-fontset")    ; BDF
 ;;		    '(font . "private-fontset"); TrueType
-		    '(width . 90)
-		    '(height . 55)
-		    '(top . 20)
+		    '(width . 100)
+		    '(height . 50)
+		    '(top . 30)
 		    '(left . 500))
 	      default-frame-alist))
 
@@ -181,9 +181,9 @@
 ;;;;;;;;;;;;;;;;
 
 ;; fonts
-(set-face-attribute 'default nil :family "Migu 1M" :height 100)  ;; default font
-(set-face-attribute 'variable-pitch nil :family "Migu 1M" :height 100) ;; propotional
-(set-face-attribute 'fixed-pitch nil :family "Migu 1M" :height 100) ;; touhaba
+(set-face-attribute 'default nil :family "Migu 1M" :height 110)  ;; default font
+(set-face-attribute 'variable-pitch nil :family "Migu 1M" :height 110) ;; propotional
+(set-face-attribute 'fixed-pitch nil :family "Migu 1M" :height 110) ;; touhaba
 (set-face-attribute 'tooltip nil :family "Migu 1M" :height 80) ;; tooltips
 
 
