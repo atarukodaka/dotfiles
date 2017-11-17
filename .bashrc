@@ -118,7 +118,7 @@ fi
 ################################################################
 
 export DISPLAY=DESKTOP-ST40GN0:0.0
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.cask/bin:$HOME/bin
 export PS1="\u@\w$ "
 
 ## alias

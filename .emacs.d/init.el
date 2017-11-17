@@ -67,6 +67,16 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\.erb$" . markdown-mode))
 
+;; coffee-mode
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (and (set (make-local-variable 'tab-width) 4)
+       (set (make-local-variable 'coffee-tab-width) 4))
+  )
+
+(add-hook 'coffee-mode-hook
+	  '(lambda() (coffee-custom)))
+
 ;; robocup
 ;(require 'rubocop)
 ;(add-hook 'ruby-mode-hook 'rubocop-mode)
@@ -152,27 +162,35 @@
 ;; ================================================================
 ;;; japanese language
 
-'(w32-ime-initialize)
-(global-set-key [M-kanji] 'ignore) 
-(global-set-key [kanji] 'ignore)  ; See more at: http://yohshiy.blog.fc2.com/blog-entry-169.html#sthash.P4hJnxxH.dpuf
+;'(w32-ime-initialize)
+;(global-set-key [M-kanji] 'ignore) 
+;(global-set-key [kanji] 'ignore)  ; See more at: http://yohshiy.blog.fc2.com/blog-entry-169.html#sthash.P4hJnxxH.dpuf
 
 ;;; japanese language (mozc)
 (set-language-environment "Japanese")
-(setq default-input-method "japanese-anthy")
+;(setq default-input-method "japanese-anthy")
 
 (set-default-coding-systems 'utf-8-unix)
 (prefer-coding-system 'utf-8-unix)
-(global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
+;(global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
 (global-set-key (kbd "M-<zenkaku-hankaku>") 'toggle-input-method)
 
 ;; mozc
-;(require 'mozc)
-;(require 'mozc-im)
-;(require 'mozc-popup)
+(require 'mozc)
+(require 'mozc-im)
+(require 'mozc-popup)
 ;(require 'mozc-cursor-color)
 
-;(setq default-input-method "japanese-mozc")
-;(setq mozc-helper-program-name "/usr/bin/mozc_emacs_helper")
+(setq default-input-method "japanese-mozc-im")
+(setq mozc-helper-program-name "mozc_emacs_helper.sh")
+;(setq mozc-helper-program-name "mozc_emacs_helper")
+
+(advice-add 'mozc-session-execute-command
+            :after (lambda (&rest args)
+                     (when (eq (nth 0 args) 'CreateSession)
+                       ;; (mozc-session-sendkey '(hiragana)))))
+                       (mozc-session-sendkey '(Hankaku/Zenkaku)))))
+
 
 ;(add-hook 'mozc-mode-hook
 ;  (lambda()
