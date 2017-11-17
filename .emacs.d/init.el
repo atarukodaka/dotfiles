@@ -13,6 +13,9 @@
 (setq ring-bell-function 'ignore)    ;; beep off
 (setq inhibit-startup-message t)
 
+;; cask
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
 
 ;; ================================================================
 ;; key assign
