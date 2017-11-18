@@ -1,30 +1,25 @@
 ;; ================================================================
-;; basic settings
+;; packaging
 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-(add-to-list 'load-path "~/.emacs.d/elisp/")
-(setq ring-bell-function 'ignore)    ;; beep off
-(setq inhibit-startup-message t)
+;(package-initialize)
+;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;(add-to-list 'load-path "~/.emacs.d/elisp/")
 
 ;; cask
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 ;; ================================================================
-;; key assign
+;; key assign / basic settings
 
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key (kbd "C-c e") 'eval-current-buffer)
 (global-set-key (kbd "C-c l") 'goto-line)    ;; goto line
 (global-set-key (kbd "C-x C-b") 'ibuffer)  ; ibuffer
 ;(global-set-key (kbd "C-m") 'newline-and-indent)
+
+(setq ring-bell-function 'ignore)    ;; beep off
+(setq inhibit-startup-message t)
 
 ;;================================================================
 ;; language-mode
