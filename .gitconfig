@@ -5,5 +5,11 @@
 	co = checkout
 	cm = commit
 	st = status
+        br = branch
+
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+[merge]
+	ff = false
+[pull]
+	ff = only
