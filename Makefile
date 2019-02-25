@@ -15,6 +15,6 @@ emacs:
 	(cd ~/dotfiles/.emacs.d; cask init; cask install)
 
 	mkdir -p ${BINDIR}
-	cp ~/dotfiles/bin/gcmt ${BINDIR}/gcmt
-	chmod +x ${BINDIR}/gcmt
+	cp ~/dotfiles/bin/ ${BINDIR}/
+	chmod +x ${BINDIR}/gcmt ${BINDIR}/mozc_emacs_helper.sh
 
