@@ -6,6 +6,7 @@ init:
 	ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 	ln -sf ~/dotfiles/.alias ~/.alias
 	ln -sf ~/dotfiles/.pryrc ~/.pryrc
+	ln -sf ~/dotfiles/.colorrc ~/.colorrc
 
 emacs:
 	rm -f ~/.emacs.d
