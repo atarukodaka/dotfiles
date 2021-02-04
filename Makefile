@@ -2,11 +2,16 @@
 BINDIR = ~/bin
 
 init:
-	ln -sf ~/dotfiles/.bashrc ~/.bashrc
-	ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-	ln -sf ~/dotfiles/.alias ~/.alias
-	ln -sf ~/dotfiles/.pryrc ~/.pryrc
-	ln -sf ~/dotfiles/.colorrc ~/.colorrc
+	ln -sf ${PWD}/.bashrc ~/
+	ln -sf ${PWD}/.gitconfig ~/
+	ln -sf ${PWD}/.alias ~/
+	ln -sf ${PWD}/.pryrc ~/
+	ln -sf ${PWD}/.colorrc ~/
+	ln -sf ${PWD}/.vimrc ~/
+
+	mkdir -p ${BINDIR}
+	cp ${PWD}/bin/gcmt ${BINDIR}
+	chmod +x ${BINDIR}/gcmt
 
 emacs:
 	rm -f ~/.emacs.d
@@ -16,6 +21,6 @@ emacs:
 	(cd ~/dotfiles/.emacs.d; cask init; cask install)
 
 	mkdir -p ${BINDIR}
-	cp ~/dotfiles/bin/ ${BINDIR}/
-	chmod +x ${BINDIR}/gcmt ${BINDIR}/mozc_emacs_helper.sh
+	cp ./bin/mozc_emacs_helper.sh ${BINDIR}/
+	chmod +x ${BINDIR}/mozc_emacs_helper.sh
 
