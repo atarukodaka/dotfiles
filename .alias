@@ -6,7 +6,7 @@ alias lt='ls -lt'
 alias h="history"
 
 # git
-alias gst="git status -s"
+alias gst="git branch --show-current; git status -s"
 alias gadd="git add"
 alias gpush="git push"
 alias gdiff="git diff --color"
